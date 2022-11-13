@@ -3,6 +3,7 @@ h264 stream relay server by jni on Android
 
 
 # server
+```
 private static H264RelayServerJni server_jni_;
 
 server_jni_.CreateServer();
@@ -15,9 +16,10 @@ server_jni_.setOnEventListener(new H264RelayServerJni.OnEventListener() {
         });
 
 server_jni_.PushVideoFrame(H264RelayServerJni.MEDIA_FRAME_FMT_H264, data, len);
-
+```
 
 # client
+```
 private static H264ClientJni client_jni_;
 
 client_jni_.setOnListener(new OnH264ClientJniListener() {
@@ -36,3 +38,4 @@ client_jni_.setOnListener(new OnH264ClientJniListener() {
 int sid = client_jni_.CreateClient("192.168.1.1", H264ClientJni.TRANSPORT_PROTOCOL_NOVO_TCP, "", "");
 
 client_jni_.StartClient(sid);
+```
